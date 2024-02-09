@@ -66,6 +66,9 @@ const images = [
 
 const imageContainer = document.querySelector('.gallery');
 
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const markup = images
   .map(
     ({ original, preview, description }) => `<li class="gallery-item">
@@ -81,9 +84,6 @@ const markup = images
   .join('');
 
 imageContainer.insertAdjacentHTML('beforeend', markup);
-
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captions: true,
